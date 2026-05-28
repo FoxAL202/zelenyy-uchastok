@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="ru" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Услуги — Зелёный Участок</title>
+  <meta name="description" content="Полный спектр услуг по благоустройству участков: озеленение, ландшафтный дизайн, уход и обслуживание.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+
+  <!-- Header (same nav pattern as index) -->
+  <header class="header">
+    <div class="container">
+      <a href="index.html" class="header-logo">
+        <img src="images/logo_no_fon.png" alt="Зелёный Участок">
+        Зелёный Участок
+      </a>
+      <nav class="header-nav" id="headerNav">
+        <a href="index.html#about">О нас</a>
+        <a href="services.html" class="active">Услуги</a>
+        <a href="index.html#portfolio">Портфолио</a>
+        <a href="index.html#testimonials">Отзывы</a>
+        <a href="index.html#contact">Контакты</a>
+        <button class="theme-toggle" id="themeToggle" aria-label="Сменить тему">
+          <svg class="icon-sun" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+          <svg class="icon-moon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+        </button>
+      </nav>
+      <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Меню">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Page header -->
+  <section class="page-header">
+    <div class="container">
+      <h1>Наши услуги</h1>
+      <p>Полный комплекс работ по благоустройству — от проекта до регулярного ухода</p>
+    </div>
+  </section>
+
+  <!-- Services detail -->
+  <section class="section">
+    <div class="container">
+      <div class="services-detail-grid">
+        <div class="service-detail-card fade-in">
+          <img src="images/uslug1.png" alt="Озеленение участка" loading="lazy">
+          <div class="service-detail-card-body">
+            <h3>Озеленение участка</h3>
+            <p>Комплексное озеленение: посадка деревьев, кустарников, цветов, создание газонов и клумб.</p>
+            <div class="price">от 50 000 ₽</div>
+            <ul>
+              <li>Подготовка почвы</li>
+              <li>Выбор растений по климату</li>
+              <li>Поливная система</li>
+              <li>Гарантия на растения</li>
+            </ul>
+            <a href="index.html#contact" class="btn btn-primary btn-sm">Заказать</a>
+          </div>
+        </div>
+        <div class="service-detail-card fade-in">
+          <img src="images/uslug2.jpg" alt="Ландшафтный дизайн" loading="lazy">
+          <div class="service-detail-card-body">
+            <h3>Ландшафтный дизайн</h3>
+            <p>Проектирование и реализация уникального дизайна участка с учётом ваших пожеланий.</p>
+            <div class="price">от 100 000 ₽</div>
+            <ul>
+              <li>Создание проекта</li>
+              <li>Мощение дорожек</li>
+              <li>Установка декоративных элементов</li>
+              <li>Ландшафтное освещение</li>
+            </ul>
+            <a href="index.html#contact" class="btn btn-primary btn-sm">Заказать</a>
+          </div>
+        </div>
+        <div class="service-detail-card fade-in">
+          <img src="images/uslug3.jpg" alt="Уход за участком" loading="lazy">
+          <div class="service-detail-card-body">
+            <h3>Уход и обслуживание</h3>
+            <p>Регулярный уход за зелёными насаждениями и поддержание порядка на участке.</p>
+            <div class="price">от 5 000 ₽/мес</div>
+            <ul>
+              <li>Стрижка газонов</li>
+              <li>Полив и подкормка</li>
+              <li>Обрезка деревьев</li>
+              <li>Сезонные работы</li>
+            </ul>
+            <a href="index.html#contact" class="btn btn-primary btn-sm">Заказать</a>
+          </div>
+        </div>
+        <div class="service-detail-card fade-in">
+          <img src="images/uslug4.jpg" alt="Дополнительные услуги" loading="lazy">
+          <div class="service-detail-card-body">
+            <h3>Дополнительные услуги</h3>
+            <p>Установка заборов, освещение, водоёмы и другие элементы благоустройства.</p>
+            <div class="price">Индивидуально</div>
+            <ul>
+              <li>Монтаж заборов</li>
+              <li>Ландшафтное освещение</li>
+              <li>Создание водоёмов</li>
+              <li>Системы автополива</li>
+            </ul>
+            <a href="index.html#contact" class="btn btn-primary btn-sm">Заказать</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="header-logo" style="font-size:16px">
+            <img src="images/logo_no_fon.png" alt="Зелёный Участок" style="width:36px;height:36px">
+            Зелёный Участок
+          </a>
+          <p>Профессиональное благоустройство частных участков в Саратове и области.</p>
+        </div>
+        <div>
+          <h4>Услуги</h4>
+          <a href="services.html">Озеленение</a>
+          <a href="services.html">Ландшафтный дизайн</a>
+          <a href="services.html">Уход за участком</a>
+          <a href="services.html">Дополнительные услуги</a>
+        </div>
+        <div>
+          <h4>Компания</h4>
+          <a href="index.html#about">О нас</a>
+          <a href="index.html#portfolio">Портфолио</a>
+          <a href="index.html#testimonials">Отзывы</a>
+          <a href="index.html#contact">Контакты</a>
+        </div>
+        <div>
+          <h4>Контакты</h4>
+          <a href="tel:+784521234567">+7 (8452) 123-45-67</a>
+          <a href="mailto:info@zelenyy-uchastok.ru">info@zelenyy-uchastok.ru</a>
+          <a href="#">г. Саратов, ул. Примерная, 1</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Зелёный Участок. Все права защищены.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
