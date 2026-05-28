@@ -34,30 +34,57 @@ document.addEventListener('DOMContentLoaded', () => {
 
   /* ----- Service cards expand ----- */
   document.querySelectorAll('.service-card').forEach(card => {
-    card.addEventListener('click', () => card.classList.toggle('expanded'));
+    const arrow = card.querySelector('.service-card-arrow');
+    card.addEventListener('click', () => {
+      const expanded = card.classList.toggle('expanded');
+      if (arrow) arrow.innerHTML = expanded
+        ? 'Свернуть <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>'
+        : 'Подробнее <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>';
+    });
   });
 
-  /* ----- Lightbox ----- */
+  /* ----- Lightbox with navigation ----- */
   const lightbox = document.getElementById('lightbox');
   const lightboxImg = document.getElementById('lightboxImg');
   const lightboxClose = document.getElementById('lightboxClose');
-  document.querySelectorAll('.portfolio-item').forEach(item => {
+  const lightboxPrev = document.getElementById('lightboxPrev');
+  const lightboxNext = document.getElementById('lightboxNext');
+  const portfolioItems = document.querySelectorAll('.portfolio-item');
+  let currentIndex = 0;
+
+  portfolioItems.forEach((item, i) => {
     item.addEventListener('click', () => {
+      currentIndex = i;
       lightboxImg.src = item.dataset.src;
       lightbox.classList.add('open');
       document.body.style.overflow = 'hidden';
     });
   });
+
+  function navigateLightbox(dir) {
+    currentIndex += dir;
+    if (currentIndex < 0) currentIndex = portfolioItems.length - 1;
+    if (currentIndex >= portfolioItems.length) currentIndex = 0;
+    const target = portfolioItems[currentIndex];
+    lightboxImg.src = target.dataset.src;
+  }
+
   function closeLightbox() {
     lightbox.classList.remove('open');
     document.body.style.overflow = '';
   }
+
   lightboxClose?.addEventListener('click', closeLightbox);
+  lightboxPrev?.addEventListener('click', (e) => { e.stopPropagation(); navigateLightbox(-1); });
+  lightboxNext?.addEventListener('click', (e) => { e.stopPropagation(); navigateLightbox(1); });
   lightbox?.addEventListener('click', (e) => {
     if (e.target === lightbox) closeLightbox();
   });
   document.addEventListener('keydown', (e) => {
+    if (!lightbox.classList.contains('open')) return;
     if (e.key === 'Escape') closeLightbox();
+    if (e.key === 'ArrowLeft') navigateLightbox(-1);
+    if (e.key === 'ArrowRight') navigateLightbox(1);
   });
 
   /* ----- Hero parallax ----- */
